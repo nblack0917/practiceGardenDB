@@ -219,6 +219,3 @@ CREATE TABLE zone10 (
     REFERENCES plantParents(plantParent_id)
 );
 
--- INSERT INTO users
--- 	(first_name, last_name)
--- VALUES 
