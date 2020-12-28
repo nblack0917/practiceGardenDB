@@ -23,7 +23,7 @@ VALUES
     (2, "15267 Dashwood Creek Dr", "Pflugerville", "Travis", "Texas", "78460"),
     (3, "333 Woodcrest Dr", "Georgetown", "Williamson", "Texas", "78652"),
     (4, "333 Woodcrest Dr", "Georgetown", "Williamson", "Texas", "78652"),
-   (5, "23453 Dripping St. Apt 22134", "Gonzales", "Dallas", "Texas", "76793");
+    (5, "23453 Dripping St. Apt 22134", "Gonzales", "Dallas", "Texas", "76793");
 
 INSERT INTO userCredentials
     (user_id, username, password)
