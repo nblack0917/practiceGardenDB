@@ -1,11 +1,10 @@
-DROP TABLE IF EXISTS users, userContact, usersAddress, usersCredentials, plantTypes, plantParents, plantVarieties, zone3, zone4, zone5, zone6, zone7, zone8, zone9, zone10;
-
+DROP TABLE IF EXISTS  usersContact, usersAddress, usersCredentials, plantVarieties, zone3, zone4, zone5, zone6, zone7, zone8, zone9, zone10, users, plantTypes, plantParents, gardenBeds;
 CREATE TABLE users (
   id INT NOT NULL AUTO_INCREMENT,
   first_name VARCHAR(50),
   last_name VARCHAR(50),
   PRIMARY KEY (id)
-);
+  );
 
 CREATE TABLE usersContact (
   id INT NOT NULL AUTO_INCREMENT,
@@ -16,6 +15,7 @@ CREATE TABLE usersContact (
   PRIMARY KEY (id),
   FOREIGN KEY (user_id)
   REFERENCES users (id)
+    ON DELETE CASCADE
 );
 
 CREATE TABLE usersAddress (
@@ -29,6 +29,7 @@ CREATE TABLE usersAddress (
   PRIMARY KEY (id),
   FOREIGN KEY (user_id)
   REFERENCES users (id)
+    ON DELETE CASCADE
 );
 
 CREATE TABLE usersCredentials (
@@ -40,6 +41,57 @@ CREATE TABLE usersCredentials (
   UNIQUE KEY (username),
   FOREIGN KEY (user_id)
   REFERENCES users (id)
+    ON DELETE CASCADE
+);
+
+CREATE TABLE gardenBeds (
+  id INT NOT NULL AUTO_INCREMENT,
+  user_id INT NOT NULL,
+  bed_width INT NOT NULL,
+  bed_length INT NOT NULL,
+  plant_1 VARCHAR(24),
+  plant_2 VARCHAR(24),
+  plant_3 VARCHAR(24),
+  plant_4 VARCHAR(24),
+  plant_5 VARCHAR(24),
+  plant_6 VARCHAR(24),
+  plant_7 VARCHAR(24),
+  plant_8 VARCHAR(24),
+  plant_9 VARCHAR(24),
+  plant_10 VARCHAR(24),
+  PRIMARY KEY (id),
+  -- KEY (plant_1),
+  -- KEY (plant_2),
+  -- KEY (plant_3),
+  -- KEY (plant_4),
+  -- KEY (plant_5),
+  -- KEY (plant_6),
+  -- KEY (plant_7),
+  -- KEY (plant_8),
+  -- KEY (plant_9),
+  -- KEY (plant_10),
+  FOREIGN KEY (user_id)
+  REFERENCES users (id)
+  -- FOREIGN KEY (plant_1)
+  -- REFERENCES plantVarieties (variety_name),
+  -- FOREIGN KEY (plant_2)
+  -- REFERENCES plantVarieties (variety_name),
+  -- FOREIGN KEY (plant_3)
+  -- REFERENCES plantVarieties (variety_name),
+  -- FOREIGN KEY (plant_4)
+  -- REFERENCES plantVarieties (variety_name),
+  -- FOREIGN KEY (plant_5)
+  -- REFERENCES plantVarieties (variety_name),
+  -- FOREIGN KEY (plant_6)
+  -- REFERENCES plantVarieties (variety_name),
+  -- FOREIGN KEY (plant_7)
+  -- REFERENCES plantVarieties (variety_name),
+  -- FOREIGN KEY (plant_8)
+  -- REFERENCES plantVarieties (variety_name),
+  -- FOREIGN KEY (plant_9)
+  -- REFERENCES plantVarieties (variety_name),
+  -- FOREIGN KEY (plant_10)
+  -- REFERENCES plantVarieties (variety_name)
 );
 
 
@@ -64,6 +116,7 @@ CREATE TABLE plantParents (
   KEY (plantParent_id),
   FOREIGN KEY (plantGroup_id)
   REFERENCES plantTypes(plantGroupName)
+    ON DELETE CASCADE
 );
 
 CREATE TABLE plantVarieties (
@@ -78,57 +131,9 @@ CREATE TABLE plantVarieties (
   KEY (variety_name),
   FOREIGN KEY (plantParent_id)
   REFERENCES plantParents(plantParent_id)
+    ON DELETE CASCADE
 );
 
-CREATE TABLE gardenBeds (
-  id INT NOT NULL AUTO_INCREMENT,
-  user_id INT NOT NULL,
-  bed_width INT NOT NULL,
-  bed_length INT NOT NULL,
-  plant_1 VARCHAR(24),
-  plant_2 VARCHAR(24),
-  plant_3 VARCHAR(24),
-  plant_4 VARCHAR(24),
-  plant_5 VARCHAR(24),
-  plant_6 VARCHAR(24),
-  plant_7 VARCHAR(24),
-  plant_8 VARCHAR(24),
-  plant_9 VARCHAR(24),
-  plant_10 VARCHAR(24),
-  PRIMARY KEY (id),
-  KEY (plant_1),
-  KEY (plant_2),
-  KEY (plant_3),
-  KEY (plant_4),
-  KEY (plant_5),
-  KEY (plant_6),
-  KEY (plant_7),
-  KEY (plant_8),
-  KEY (plant_9),
-  KEY (plant_10),
-  FOREIGN KEY (user_id)
-  REFERENCES users (id),
-  FOREIGN KEY (plant_1)
-  REFERENCES plantVarieties (variety_name),
-  FOREIGN KEY (plant_2)
-  REFERENCES plantVarieties (variety_name),
-  FOREIGN KEY (plant_3)
-  REFERENCES plantVarieties (variety_name),
-  FOREIGN KEY (plant_4)
-  REFERENCES plantVarieties (variety_name),
-  FOREIGN KEY (plant_5)
-  REFERENCES plantVarieties (variety_name),
-  FOREIGN KEY (plant_6)
-  REFERENCES plantVarieties (variety_name),
-  FOREIGN KEY (plant_7)
-  REFERENCES plantVarieties (variety_name),
-  FOREIGN KEY (plant_8)
-  REFERENCES plantVarieties (variety_name),
-  FOREIGN KEY (plant_9)
-  REFERENCES plantVarieties (variety_name),
-  FOREIGN KEY (plant_10)
-  REFERENCES plantVarieties (variety_name)
-);
 
 CREATE TABLE zone3 (
     zone_id INT NOT NULL,

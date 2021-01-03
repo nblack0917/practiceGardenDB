@@ -33,6 +33,13 @@ VALUES
     (3, "CindyWeer", "Word123!"),
     (4, "tommyBoy", "Password6234!!"),
     (5, "funktheskunk", "skunkworks.");
+    
+INSERT INTO gardenBeds
+    (user_id, bed_width, bed_length, plant_1, plant_2, plant_3, plant_4, plant_5, plant_6, plant_7, plant_8, plant_9, plant_10)
+VALUES
+    (1, 48, 72, "Cherry", "Yellow", "Orange", "Orange", "Orange", "Dinosaur Kale", "Dinosaur Kale", "Dinosaur Kale", "Dinosaur Kale", "Dinosaur Kale"),
+    (1, 48, 48, "Cherry", "Cherry", "Beefsteak", "Beefsteak", "", "", "", "", "", ""),
+    (4, 24, 48, "Cherry", "Cherry", "Cherry", "Cherry", "Cherry", "", "", "", "", "");
 
 INSERT INTO plantTypes
     (plantGroupName)
@@ -61,10 +68,3 @@ VALUES
     (1, "Beefsteak", "Large firm tomatoes", 24, 85),
     (4, "Dinosaur Kale", "Wide leaves", 18, 65),
     (6, "Orange Carrot", "2 - 8 inches long", 10, 90);
-
-INSERT INTO gardenBeds
-    (user_id, bed_width, bed_length, plant_1, plant_2, plant_3, plant_4, plant_5, plant_6, plant_7, plant_8, plant_9, plant_10)
-VALUES
-    (1, 48, 72, "Cherry", "Yellow", "Orange", "Orange", "Orange", "Dinosaur Kale", "Dinosaur Kale", "Dinosaur Kale", "Dinosaur Kale", "Dinosaur Kale"),
-    (1, 48, 48, "Cherry", "Cherry", "Beefsteak", "Beefsteak", "", "", "", "", "", ""),
-    (4, 24, 48, "Cherry", "Cherry", "Cherry", "Cherry", "Cherry", "", "", "", "", "");
