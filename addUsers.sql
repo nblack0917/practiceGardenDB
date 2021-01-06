@@ -35,11 +35,11 @@ VALUES
     (5, "funktheskunk", "skunkworks.");
     
 INSERT INTO gardenBeds
-    (user_id, bed_width, bed_length, plant_1, plant_2, plant_3, plant_4, plant_5, plant_6, plant_7, plant_8, plant_9, plant_10)
+    (user_id, bed_type, bed_width, bed_length)
 VALUES
-    (1, 48, 72, "Cherry", "Yellow", "Orange", "Orange", "Orange", "Dinosaur Kale", "Dinosaur Kale", "Dinosaur Kale", "Dinosaur Kale", "Dinosaur Kale"),
-    (1, 48, 48, "Cherry", "Cherry", "Beefsteak", "Beefsteak", "", "", "", "", "", ""),
-    (4, 24, 48, "Cherry", "Cherry", "Cherry", "Cherry", "Cherry", "", "", "", "", "");
+    (1, 0, 48, 72),
+    (1, 0, 48, 48),
+    (4, 1, 12, 12);
 
 INSERT INTO plantTypes
     (plantGroupName)
