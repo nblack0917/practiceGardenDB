@@ -1,4 +1,4 @@
-runtime: nodejs
+runtime: nodejs10
 
 env_variables:
   CLOUD_INSTANCE: practicegardendb:us-central1:practicegardeninstance
