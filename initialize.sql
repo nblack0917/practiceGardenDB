@@ -1,4 +1,5 @@
-DROP TABLE IF EXISTS  usersContact, usersAddress, usersCredentials, plantVarieties, zone3, zone4, zone5, zone6, zone7, zone8, zone9, zone10, users, plantTypes, plantParents, gardenBeds;
+DROP TABLE IF EXISTS  usersContact, usersAddress, usersCredentials, plantVarieties, zone3, zone4, zone5, zone6, zone7, zone8, zone9, zone10, plantParents, gardenBeds, users, plantTypes;
+
 CREATE TABLE users (
   id INT NOT NULL AUTO_INCREMENT,
   first_name VARCHAR(50),
@@ -47,6 +48,7 @@ CREATE TABLE usersCredentials (
 CREATE TABLE gardenBeds (
   id INT NOT NULL AUTO_INCREMENT,
   user_id INT NOT NULL,
+  bed_id INT NOT NULL,
   bed_width INT NOT NULL,
   bed_length INT NOT NULL,
   plant_1 VARCHAR(24),
