@@ -33,9 +33,18 @@ VALUES
     (3, "CindyWeer", "Word123!"),
     (4, "tommyBoy", "Password6234!!"),
     (5, "funktheskunk", "skunkworks.");
-    
+
+INSERT INTO userGardens
+    (user_id, garden_width, garden_length)
+VALUES
+    (1, 300, 300),
+    (2, 24, 48),
+    (3, 100, 100),
+    (4, 48, 48),
+    (5, 400, 400);
+
 INSERT INTO gardenBeds
-    (user_id, bed_type, bed_width, bed_length)
+    (garden_id, bed_type, bed_width, bed_length)
 VALUES
     (1, 0, 48, 72),
     (1, 0, 48, 48),
