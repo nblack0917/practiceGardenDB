@@ -12,7 +12,7 @@ app.use('/plants', plantsRouter)
 
 
 app.get('/', (req, res) => {
-    res.send('Welcome to my Garden App!')
+    res.send('Welcome to my UPDATED Garden App!')
   })
   
   app.listen(port, () => {
