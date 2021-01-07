@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS  usersContact, usersAddress, usersCredentials, gardenPlants, plantVarieties, zone3, zone4, zone5, zone6, zone7, zone8, zone9, zone10, plantParents, gardenBeds, users, plantTypes;
+DROP TABLE IF EXISTS  usersContact, usersAddress, usersCredentials, plantVarieties, zone3, zone4, zone5, zone6, zone7, zone8, zone9, zone10, plantParents, gardenPlants, plantTypes, gardenBeds, users;
 
 CREATE TABLE users (
   id INT NOT NULL AUTO_INCREMENT,
@@ -53,7 +53,8 @@ CREATE TABLE gardenBeds (
   bed_length INT NOT NULL,
   PRIMARY KEY (bed_id),
   FOREIGN KEY (user_id)
-  REFERENCES users (id)
+    REFERENCES users (id)
+    ON DELETE CASCADE
 );
 
 CREATE TABLE plantTypes (
@@ -80,6 +81,19 @@ CREATE TABLE plantParents (
     ON DELETE CASCADE
 );
 
+CREATE TABLE gardenPlants (
+  id INT NOT NULL AUTO_INCREMENT,
+  bed_id INT NOT NULL,
+  plant_variety VARCHAR(24),
+  PRIMARY KEY (id),
+  KEY (plant_variety),
+  FOREIGN KEY (bed_id)
+    REFERENCES gardenBeds(bed_id)
+    ON DELETE CASCADE
+  -- FOREIGN KEY (plant_variety)
+  --   REFERENCES plantVarieties(variety_name)
+);
+
 CREATE TABLE plantVarieties (
   id INT NOT NULL AUTO_INCREMENT,
   plantParent_id INT NOT NULL,
@@ -92,19 +106,10 @@ CREATE TABLE plantVarieties (
   KEY (variety_name),
   FOREIGN KEY (plantParent_id)
   REFERENCES plantParents(plantParent_id)
-    ON DELETE CASCADE
-);
-
-CREATE TABLE gardenPlants (
-  id INT NOT NULL AUTO_INCREMENT,
-  bed_id INT NOT NULL,
-  plant_variety VARCHAR(24),
-  PRIMARY KEY (id),
-  FOREIGN KEY (bed_id)
-    REFERENCES gardenBeds (bed_id)
     ON DELETE CASCADE,
-  FOREIGN KEY (plant_variety)
-    REFERENCES plantVarieties (variety_name)
+  FOREIGN KEY (variety_name)
+    REFERENCES gardenPlants(plant_variety)
+    ON DELETE CASCADE
 );
 
 CREATE TABLE zone3 (

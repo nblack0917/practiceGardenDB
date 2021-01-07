@@ -39,7 +39,11 @@ INSERT INTO gardenBeds
 VALUES
     (1, 0, 48, 72),
     (1, 0, 48, 48),
-    (4, 1, 12, 12);
+    (4, 1, 12, 12),
+    (5, 0, 48, 72),
+    (5, 0, 48, 48),
+	(2, 1, 12, 12),
+    (5, 1, 12, 12);
 
 INSERT INTO plantTypes
     (plantGroupName)
@@ -60,6 +64,36 @@ VALUES
     (5, "Herbs", "Basil", 8, 0.5, "Full Sun", "Loam", "Moist, well-drained"),
     (6, "Vegetable", "Carrots", 6, 0.5, "Full Sun", "Loam", "Moist, well-drained");
 
+
+
+INSERT INTO gardenPlants
+    (bed_id, plant_variety)
+VALUES
+    (1, "Cherry"),
+    (1, "Cherry"),
+    (1, "Cherry"),
+    (1, "Cherry"),
+    (1, "Yellow"),
+    (1, "Yellow"),
+    (1, "Yellow"),
+    (1, "Beefsteak"),
+    (1, "Beefsteak"),
+    (3, "Dinosaur Kale"),
+    (2, "Orange Carrot"),
+    (2, "Orange Carrot"),
+    (5, "Orange Carrot"),
+    (5, "Orange Carrot"),
+    (5, "Orange Carrot"),
+    (4, "Kentucky Wonder Beans"),
+    (4, "Kentucky Wonder Beans"),
+    (4, "Kentucky Wonder Beans"),
+    (4, "Kentucky Wonder Beans"),
+    (4, "Kentucky Wonder Beans"),
+    (4, "Kentucky Wonder Beans"),
+    (4, "Kentucky Wonder Beans"),
+    (6, "Sweet Basil"),
+    (7, "Dill");
+    
 INSERT INTO plantVarieties
     (plantParent_id, variety_name, variety_description, height, daysToHarvest)
 VALUES
@@ -67,4 +101,8 @@ VALUES
     (2, "Yellow", "8 inches long. Yellow in color", 24, 85),
     (1, "Beefsteak", "Large firm tomatoes", 24, 85),
     (4, "Dinosaur Kale", "Wide leaves", 18, 65),
+    (5, "Sweet Basil", "Large sweet tasing basil leaves", 18, 30),
+    (5, "Dill", "Soft need like leaves", 18, 30),
+    (4, "Kentucky Wonder Beans", "6-8 inch long beans", 20, 56),
     (6, "Orange Carrot", "2 - 8 inches long", 10, 90);
+    
