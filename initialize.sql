@@ -48,6 +48,7 @@ CREATE TABLE usersCredentials (
 CREATE TABLE userGardens (
   garden_id INT NOT NULL AUTO_INCREMENT,
   user_id INT NOT NULL,
+  zone_id INT NOT NULL,
   garden_width INT NOT NULL,
   garden_length INT NOT NULL,
   PRIMARY KEY (garden_id),
@@ -69,24 +70,20 @@ CREATE TABLE gardenBeds (
 );
 
 CREATE TABLE plantTypes (
-  id INT NOT NULL AUTO_INCREMENT,
   plantGroupName VARCHAR(12),
-  PRIMARY KEY (id),
-  UNIQUE (plantGroupName)
+  PRIMARY KEY (plantGroupName)
 );
 
 CREATE TABLE plantParents (
-  id INT NOT NULL AUTO_INCREMENT,
-  plantParent_id INT NOT NULL,
+  plantParent_id INT NOT NULL AUTO_INCREMENT,
   plantGroup_id VARCHAR(12),
   plantParent_name VARCHAR(50),
   plantParent_spacing INT,
   plantParent_sowDepth INT,
   plantParent_sun VARCHAR(24),
   plantParent_soil VARCHAR(24),
-  plantParent_watering VARCHAR(24),
-  PRIMARY KEY (id),
-  KEY (plantParent_id),
+  plantParent_watering VARCHAR(48),
+  PRIMARY KEY (plantParent_id),
   FOREIGN KEY (plantGroup_id)
   REFERENCES plantTypes(plantGroupName)
     ON DELETE CASCADE

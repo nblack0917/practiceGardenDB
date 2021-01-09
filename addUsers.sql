@@ -35,13 +35,13 @@ VALUES
     (5, "funktheskunk", "skunkworks.");
 
 INSERT INTO userGardens
-    (user_id, garden_width, garden_length)
+    (user_id, zone_id, garden_width, garden_length)
 VALUES
-    (1, 300, 300),
-    (2, 24, 48),
-    (3, 100, 100),
-    (4, 48, 48),
-    (5, 400, 400);
+    (1, 8, 300, 300),
+    (2, 8, 24, 48),
+    (3, 8, 100, 100),
+    (4, 8, 48, 48),
+    (5, 6, 400, 400);
 
 INSERT INTO gardenBeds
     (garden_id, bed_type, bed_width, bed_length)
@@ -54,64 +54,3 @@ VALUES
 	(2, 1, 12, 12),
     (5, 1, 12, 12);
 
-INSERT INTO plantTypes
-    (plantGroupName)
-VALUES
-    ("Fruit"),
-    ("Vegetable"),
-    ("Greens"),
-    ("Gourds"),
-    ("Herbs");
-
-INSERT INTO plantParents
-    (plantParent_id, plantGroup_id, plantParent_name, plantParent_spacing, plantParent_sowDepth, plantParent_sun, plantParent_soil, plantParent_watering)
-VALUES
-    (1, "Fruit", "Tomatoes", 18, 0.5, "Full Sun", "Loam", "Moist, well-drained"),
-    (2, "Fruit", "Squash", 12, 1, "Full Sun", "Loam", "Moist, well-drained"),
-    (3, "Fruit", "Beans", 12, 1, "Full Sun", "Loam", "Moist, well-drained"),
-    (4, "Greens", "Lettuce", 12, 0.5, "Full Sun", "Loam", "Moist, well-drained"),
-    (5, "Herbs", "Basil", 8, 0.5, "Full Sun", "Loam", "Moist, well-drained"),
-    (6, "Vegetable", "Carrots", 6, 0.5, "Full Sun", "Loam", "Moist, well-drained");
-
-
-
-INSERT INTO gardenPlants
-    (bed_id, plant_variety)
-VALUES
-    (1, "Cherry"),
-    (1, "Cherry"),
-    (1, "Cherry"),
-    (1, "Cherry"),
-    (1, "Yellow"),
-    (1, "Yellow"),
-    (1, "Yellow"),
-    (1, "Beefsteak"),
-    (1, "Beefsteak"),
-    (3, "Dinosaur Kale"),
-    (2, "Orange Carrot"),
-    (2, "Orange Carrot"),
-    (5, "Orange Carrot"),
-    (5, "Orange Carrot"),
-    (5, "Orange Carrot"),
-    (4, "Kentucky Wonder Beans"),
-    (4, "Kentucky Wonder Beans"),
-    (4, "Kentucky Wonder Beans"),
-    (4, "Kentucky Wonder Beans"),
-    (4, "Kentucky Wonder Beans"),
-    (4, "Kentucky Wonder Beans"),
-    (4, "Kentucky Wonder Beans"),
-    (6, "Sweet Basil"),
-    (7, "Dill");
-    
-INSERT INTO plantVarieties
-    (plantParent_id, variety_name, variety_description, height, daysToHarvest)
-VALUES
-    (1, "Cherry", "Small sweet tomatoes", 24, 85),
-    (2, "Yellow", "8 inches long. Yellow in color", 24, 85),
-    (1, "Beefsteak", "Large firm tomatoes", 24, 85),
-    (4, "Dinosaur Kale", "Wide leaves", 18, 65),
-    (5, "Sweet Basil", "Large sweet tasing basil leaves", 18, 30),
-    (5, "Dill", "Soft need like leaves", 18, 30),
-    (4, "Kentucky Wonder Beans", "6-8 inch long beans", 20, 56),
-    (6, "Orange Carrot", "2 - 8 inches long", 10, 90);
-    
