@@ -60,7 +60,8 @@ VALUES
     ("Flower", "Zinnia", 12, 0.5, "Full Sun", "Loam", "Well-drained"),
     ("Flower", "Marigold", 12, 0.5, "Full Sun", "Loam", "Well-drained"),
     ("Flower", "Cosmos", 12, 0.5, "Full Sun", "Loam", "Well-drained"),
-    ("Flower", "Sunflower", 18, 1, "Full Sun", "Loam", "High moisture/Well-drained");
+    ("Flower", "Hibiscus", 24, 0.25, "Full Sun", "Loam", "High moisture/Well-drained"),
+    ("Vegetable", "Broccoli", 18, 0.5, "Full Sun", "Loam", "Well-drained");
 
 
 

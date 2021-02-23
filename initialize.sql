@@ -118,92 +118,148 @@ CREATE TABLE plantVarieties (
     ON DELETE CASCADE
 );
 
-CREATE TABLE zone3 (
+CREATE TABLE zones (
+    id INT NOT NULL AUTO_INCREMENT,
     zone_id INT NOT NULL,
     plant_id INT NOT NULL,
-    spring_sow DATE,
-    spring_transplant DATE,
-    fall_sow DATE,
-    fall_transplant DATE,
-    PRIMARY KEY (zone_id),
+    spring_sow_start VARCHAR(60),
+    spring_sow_end VARCHAR(60),
+    spring_transplant_start VARCHAR(60),
+    spring_transplant_end VARCHAR(60),
+    fall_sow_start VARCHAR(60),
+    fall_sow_end VARCHAR(60),
+    fall_transplant_start VARCHAR(60),
+    fall_transplant_end VARCHAR(60),
+    PRIMARY KEY (id),
     FOREIGN KEY (plant_id)
     REFERENCES plantParents(plantParent_id)
 );
-CREATE TABLE zone4 (
-    zone_id INT NOT NULL,
-    plant_id INT NOT NULL,
-    spring_sow DATE,
-    spring_transplant DATE,
-    fall_sow DATE,
-    fall_transplant DATE,
-    PRIMARY KEY (zone_id),
-    FOREIGN KEY (plant_id)
-    REFERENCES plantParents(plantParent_id)
-);
-CREATE TABLE zone5 (
-    zone_id INT NOT NULL,
-    plant_id INT NOT NULL,
-    spring_sow DATE,
-    spring_transplant DATE,
-    fall_sow DATE,
-    fall_transplant DATE,
-    PRIMARY KEY (zone_id),
-    FOREIGN KEY (plant_id)
-    REFERENCES plantParents(plantParent_id)
-);
-CREATE TABLE zone6 (
-    zone_id INT NOT NULL,
-    plant_id INT NOT NULL,
-    spring_sow DATE,
-    spring_transplant DATE,
-    fall_sow DATE,
-    fall_transplant DATE,
-    PRIMARY KEY (zone_id),
-    FOREIGN KEY (plant_id)
-    REFERENCES plantParents(plantParent_id)
-);
-CREATE TABLE zone7 (
-    zone_id INT NOT NULL,
-    plant_id INT NOT NULL,
-    spring_sow DATE,
-    spring_transplant DATE,
-    fall_sow DATE,
-    fall_transplant DATE,
-    PRIMARY KEY (zone_id),
-    FOREIGN KEY (plant_id)
-    REFERENCES plantParents(plantParent_id)
-);
-CREATE TABLE zone8 (
-    zone_id INT NOT NULL,
-    plant_id INT NOT NULL,
-    spring_sow DATE,
-    spring_transplant DATE,
-    fall_sow DATE,
-    fall_transplant DATE,
-    PRIMARY KEY (zone_id),
-    FOREIGN KEY (plant_id)
-    REFERENCES plantParents(plantParent_id)
-);
-CREATE TABLE zone9 (
-    zone_id INT NOT NULL,
-    plant_id INT NOT NULL,
-    spring_sow DATE,
-    spring_transplant DATE,
-    fall_sow DATE,
-    fall_transplant DATE,
-    PRIMARY KEY (zone_id),
-    FOREIGN KEY (plant_id)
-    REFERENCES plantParents(plantParent_id)
-);
-CREATE TABLE zone10 (
-    zone_id INT NOT NULL,
-    plant_id INT NOT NULL,
-    spring_sow DATE,
-    spring_transplant DATE,
-    fall_sow DATE,
-    fall_transplant DATE,
-    PRIMARY KEY (zone_id),
-    FOREIGN KEY (plant_id)
-    REFERENCES plantParents(plantParent_id)
-);
+-- CREATE TABLE zone3 (
+--     id INT NOT NULL AUTO_INCREMENT,
+--     zone_id INT NOT NULL,
+--     plant_id INT NOT NULL,
+--     spring_sow_start VARCHAR(60),
+--     spring_sow_end VARCHAR(60),
+--     spring_transplant_start VARCHAR(60),
+--     spring_transplant_end VARCHAR(60),
+--     fall_sow_start VARCHAR(60),
+--     fall_sow_end VARCHAR(60),
+--     fall_transplant_start VARCHAR(60),
+--     fall_transplant_end VARCHAR(60),
+--     PRIMARY KEY (id),
+--     FOREIGN KEY (plant_id)
+--     REFERENCES plantParents(plantParent_id)
+-- );
+-- CREATE TABLE zone4 (
+--     id INT NOT NULL AUTO_INCREMENT,
+--     zone_id INT NOT NULL,
+--     plant_id INT NOT NULL,
+--     spring_sow_start VARCHAR(60),
+--     spring_sow_end VARCHAR(60),
+--     spring_transplant_start VARCHAR(60),
+--     spring_transplant_end VARCHAR(60),
+--     fall_sow_start VARCHAR(60),
+--     fall_sow_end VARCHAR(60),
+--     fall_transplant_start VARCHAR(60),
+--     fall_transplant_end VARCHAR(60),
+--     PRIMARY KEY (id),
+--     FOREIGN KEY (plant_id)
+--     REFERENCES plantParents(plantParent_id)
+-- );
+-- CREATE TABLE zone5 (
+--     id INT NOT NULL AUTO_INCREMENT,
+--     zone_id INT NOT NULL,
+--     plant_id INT NOT NULL,
+--     spring_sow_start VARCHAR(60),
+--     spring_sow_end VARCHAR(60),
+--     spring_transplant_start VARCHAR(60),
+--     spring_transplant_end VARCHAR(60),
+--     fall_sow_start VARCHAR(60),
+--     fall_sow_end VARCHAR(60),
+--     fall_transplant_start VARCHAR(60),
+--     fall_transplant_end VARCHAR(60),
+--     PRIMARY KEY (id),
+--     FOREIGN KEY (plant_id)
+--     REFERENCES plantParents(plantParent_id)
+-- );
+-- CREATE TABLE zone6 (
+--     id INT NOT NULL AUTO_INCREMENT,
+--     zone_id INT NOT NULL,
+--     plant_id INT NOT NULL,
+--     spring_sow_start VARCHAR(60),
+--     spring_sow_end VARCHAR(60),
+--     spring_transplant_start VARCHAR(60),
+--     spring_transplant_end VARCHAR(60),
+--     fall_sow_start VARCHAR(60),
+--     fall_sow_end VARCHAR(60),
+--     fall_transplant_start VARCHAR(60),
+--     fall_transplant_end VARCHAR(60),
+--     PRIMARY KEY (id),
+--     FOREIGN KEY (plant_id)
+--     REFERENCES plantParents(plantParent_id)
+-- );
+-- CREATE TABLE zone7 (
+--     id INT NOT NULL AUTO_INCREMENT,
+--     zone_id INT NOT NULL,
+--     plant_id INT NOT NULL,
+--     spring_sow_start VARCHAR(60),
+--     spring_sow_end VARCHAR(60),
+--     spring_transplant_start VARCHAR(60),
+--     spring_transplant_end VARCHAR(60),
+--     fall_sow_start VARCHAR(60),
+--     fall_sow_end VARCHAR(60),
+--     fall_transplant_start VARCHAR(60),
+--     fall_transplant_end VARCHAR(60),
+--     PRIMARY KEY (id),
+--     FOREIGN KEY (plant_id)
+--     REFERENCES plantParents(plantParent_id)
+-- );
+-- CREATE TABLE zone8 (
+--     id INT NOT NULL AUTO_INCREMENT,
+--     zone_id INT NOT NULL,
+--     plant_id INT NOT NULL,
+--     spring_sow_start VARCHAR(60),
+--     spring_sow_end VARCHAR(60),
+--     spring_transplant_start VARCHAR(60),
+--     spring_transplant_end VARCHAR(60),
+--     fall_sow_start VARCHAR(60),
+--     fall_sow_end VARCHAR(60),
+--     fall_transplant_start VARCHAR(60),
+--     fall_transplant_end VARCHAR(60),
+--     PRIMARY KEY (id),
+--     FOREIGN KEY (plant_id)
+--     REFERENCES plantParents(plantParent_id)
+-- );
+-- CREATE TABLE zone9 (
+--     id INT NOT NULL AUTO_INCREMENT,
+--     zone_id INT NOT NULL,
+--     plant_id INT NOT NULL,
+--     spring_sow_start VARCHAR(60),
+--     spring_sow_end VARCHAR(60),
+--     spring_transplant_start VARCHAR(60),
+--     spring_transplant_end VARCHAR(60),
+--     fall_sow_start VARCHAR(60),
+--     fall_sow_end VARCHAR(60),
+--     fall_transplant_start VARCHAR(60),
+--     fall_transplant_end VARCHAR(60),
+--     PRIMARY KEY (id),
+--     FOREIGN KEY (plant_id)
+--     REFERENCES plantParents(plantParent_id)
+-- );
+-- CREATE TABLE zone10 (
+--     id INT NOT NULL AUTO_INCREMENT,
+--     zone_id INT NOT NULL,
+--     plant_id INT NOT NULL,
+--     spring_sow_start VARCHAR(60),
+--     spring_sow_end VARCHAR(60),
+--     spring_transplant_start VARCHAR(60),
+--     spring_transplant_end VARCHAR(60),
+--     fall_sow_start VARCHAR(60),
+--     fall_sow_end VARCHAR(60),
+--     fall_transplant_start VARCHAR(60),
+--     fall_transplant_end VARCHAR(60),
+--     PRIMARY KEY (id),
+--     FOREIGN KEY (plant_id)
+--     REFERENCES plantParents(plantParent_id)
+-- );
 
